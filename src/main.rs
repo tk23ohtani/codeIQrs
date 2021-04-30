@@ -8,15 +8,15 @@ fn exlog(_dat: &mut [u32; DEPTH], _val: u32, _log: u32) -> usize {
     for n in 0..DEPTH {
         _dat[n] = val % _log;
         val = val / _log;
-        if val == 0 { return 1 + n; }
+        if val == 0 { return n; }
     }
     n
 }
 
 /// # 回文かどうかを確認する
 fn check(_dat: &mut [u32; DEPTH], _n: usize) -> bool {
-    for n in 0..(_n / 2) {
-        if _dat[n] != _dat[_n - 1 - n] { return false; }
+    for n in 0..((_n + 1) / 2) {
+        if _dat[n] != _dat[_n - n] { return false; }
     }
     true
 }
@@ -44,17 +44,17 @@ mod q01_tests {
         let mut array: [u32; DEPTH] = Default::default();
         let mut rs: usize;
         rs = exlog(&mut array, 0b101, 2);
-        assert_eq!(3, rs);
+        assert_eq!(2, rs);
         assert_eq!(1, array[0]);
         assert_eq!(0, array[1]);
         assert_eq!(1, array[2]);
         rs = exlog(&mut array, 0o321, 8);
-        assert_eq!(3, rs);
+        assert_eq!(2, rs);
         assert_eq!(1, array[0]);
         assert_eq!(2, array[1]);
         assert_eq!(3, array[2]);
         rs = exlog(&mut array, 123, 10);
-        assert_eq!(3, rs);
+        assert_eq!(2, rs);
         assert_eq!(3, array[0]);
         assert_eq!(2, array[1]);
         assert_eq!(1, array[2]);
