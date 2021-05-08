@@ -3,3 +3,10 @@
 [[package]]
 name = "codeIQrs"
 version = "0.1.0"
+dependencies = [
+ "my_rslib",
+]
+
+[[package]]
+name = "my_rslib"
+version = "0.1.0"
