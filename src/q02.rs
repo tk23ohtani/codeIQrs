@@ -1,12 +1,12 @@
 const MAX: usize = 10;
 
-struct eBuf {
+struct EBuf {
     data: [u32; MAX],
     ptr: my_rslib::RingPtr,
 }
-impl eBuf {
-    fn new() -> eBuf {
-        eBuf {
+impl EBuf {
+    fn new() -> EBuf {
+        EBuf {
             data: [0; MAX],
             ptr: my_rslib::RingPtr::new(MAX),
         }
@@ -31,7 +31,7 @@ impl eBuf {
 
 
 pub fn q02() -> u32 {
-    let x = eBuf::new();
+    let x = EBuf::new();
     0
 }
 
