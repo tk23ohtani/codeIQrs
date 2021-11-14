@@ -34,3 +34,12 @@ pub fn q02() -> u32 {
     let x = eBuf::new();
     0
 }
+
+#[cfg(test)]
+mod q02_tests {
+    use crate::q02::*;
+    #[test]
+    fn q02_test() {
+        assert_eq!(0, q02());
+    }
+}
