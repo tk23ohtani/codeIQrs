@@ -1,0 +1,3 @@
+[submodule "my_rslib"]
+	path = my_rslib
+	url = https://github.com/tk23ohtani/my_rslib.git
